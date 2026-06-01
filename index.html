@@ -4,42 +4,95 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>hibilog Gallery</title>
+
 <style>
-body{font-family:sans-serif;max-width:900px;margin:40px auto;padding:20px}
-#gallery{display:none}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
-.grid img{width:100%;height:180px;object-fit:cover;border-radius:8px}
-input,button{padding:10px;font-size:16px}
+body{
+  font-family:sans-serif;
+  max-width:900px;
+  margin:40px auto;
+  padding:20px;
+}
+
+#gallery{
+  display:none;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+
+.grid img{
+  width:100%;
+  border-radius:10px;
+}
+
+input,button{
+  padding:10px;
+  font-size:16px;
+}
 </style>
 </head>
+
 <body>
+
 <h1>hibilog Gallery</h1>
 
 <div id="login">
-<p>このアルバムは保護されています</p>
-<input type="password" id="pw" placeholder="パスワード">
-<button onclick="check()">開く</button>
+  <p>このアルバムは保護されています</p>
+
+  <input
+    type="password"
+    id="pw"
+    placeholder="パスワード"
+  >
+
+  <button onclick="checkPassword()">
+    開く
+  </button>
 </div>
 
 <div id="gallery">
-<h2>サンプルアルバム</h2>
-<p>ここにDropboxの画像URLを並べます</p>
-<div class="grid">
-<img src=./6I8A5911.jpg">
-</div>
-<p><a href="#">一括ダウンロード</a></p>
+
+  <h2>サンプルアルバム</h2>
+
+  <div class="grid">
+
+    <img src="./6I8A5911.jpg">
+
+  </div>
+
+  <br>
+
+  <a href="#">
+    すべてダウンロード
+  </a>
+
 </div>
 
 <script>
-const PASSWORD = "hibilog";
-function check(){
-  if(document.getElementById("pw").value === PASSWORD){
-    document.getElementById("login").style.display="none";
-    document.getElementById("gallery").style.display="block";
+function checkPassword(){
+
+  const password = "hibilog";
+
+  if(
+    document.getElementById("pw").value
+    === password
+  ){
+
+    document.getElementById("login").style.display = "none";
+
+    document.getElementById("gallery").style.display = "block";
+
   }else{
+
     alert("パスワードが違います");
+
   }
+
 }
 </script>
+
 </body>
 </html>
