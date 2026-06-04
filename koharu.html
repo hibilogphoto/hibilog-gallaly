@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hibilog Gallery</title>
+
+<style>
+body{
+  font-family: sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #444;
+}
+
+h1{
+  text-align:center;
+}
+
+#gallery{
+  display:none;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.grid img{
+  width:100%;
+  border-radius:12px;
+}
+
+.download-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:12px 24px;
+  background:#f5f2ee;
+  color:#444;
+  text-decoration:none;
+  border-radius:8px;
+}
+
+input,button{
+  padding:10px;
+  font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>hibilog Gallery</h1>
+
+<div id="login">
+
+<p>お写真の準備ができました。</p>
+
+<input
+type="password"
+id="pw"
+placeholder="パスワード">
+
+<button onclick="checkPassword()">
+開く
+</button>
+
+</div>
+
+<div id="gallery">
+
+<h2>koharu</h2>
+
+<div class="grid">
+
+<img src="★photo1.jpg">
+<img src="★photo2.jpg">
+<img src="★photo3.jpg">
+
+</div>
+
+<a
+class="download-btn"
+href="https://www.dropbox.com/scl/fo/00hfzl758b88bbm5fclod/AFLqDLU0WlKflxvODr38dwU?rlkey=6lgpov8n86vjtyrt9ygx73his&st=nmec3x0r&dl=0
+target="_blank">
+
+すべてダウンロード
+
+</a>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+const password = "★パスワード";
+
+if(
+document.getElementById("pw").value
+=== password
+){
+
+document.getElementById("login").style.display="none";
+document.getElementById("gallery").style.display="block";
+
+}else{
+
+alert("パスワードが違います");
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
